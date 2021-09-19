@@ -72,10 +72,11 @@ cmd_update_current_symlink () {
     echo \
         "ln \
             --force \
+            --no-target-directory \
             --relative \
             --symbolic \
             --verbose \
-            $1/$2 \
+            "$2" \
             $(current_symlink $1)"
     return
 }
