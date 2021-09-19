@@ -70,10 +70,9 @@ current_symlink () {
 
 cmd_update_current_symlink () {
     echo \
-        "rm \
+        "ln \
             --force \
-            $(current_symlink $1) \
-        && ln \
+            --relative \
             --symbolic \
             --verbose \
             $1/$2 \
